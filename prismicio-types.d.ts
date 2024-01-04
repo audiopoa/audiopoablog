@@ -48,6 +48,17 @@ interface ArticleDocumentData {
   featuredImage: prismic.ImageField<never>;
 
   /**
+   * cta_button field in *Article*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.cta_button
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  cta_button: prismic.LinkField;
+
+  /**
    * Slice Zone field in *Article*
    *
    * - **Field Type**: Slice Zone
@@ -56,8 +67,7 @@ interface ArticleDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<ArticleDocumentDataSlicesSlice>
-  /**
+  slices: prismic.SliceZone<ArticleDocumentDataSlicesSlice> /**
    * Meta Title field in *Article*
    *
    * - **Field Type**: Text
@@ -205,8 +215,7 @@ interface PageDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<PageDocumentDataSlicesSlice>
-  /**
+  slices: prismic.SliceZone<PageDocumentDataSlicesSlice> /**
    * Meta Title field in *Page*
    *
    * - **Field Type**: Text
@@ -560,10 +569,13 @@ declare module "@prismicio/client" {
     export type {
       ArticleDocument,
       ArticleDocumentData,
+      ArticleDocumentDataSlicesSlice,
       NavigationDocument,
       NavigationDocumentData,
+      NavigationDocumentDataLinksItem,
       PageDocument,
       PageDocumentData,
+      PageDocumentDataSlicesSlice,
       SettingsDocument,
       SettingsDocumentData,
       AllDocumentTypes,
@@ -571,13 +583,17 @@ declare module "@prismicio/client" {
       ContactFormSliceVariation,
       ContactFormSliceDefault,
       ImageSlice,
+      ImageSliceDefaultPrimary,
+      ImageSliceWidePrimary,
       ImageSliceVariation,
       ImageSliceDefault,
       ImageSliceWide,
       QuoteSlice,
+      QuoteSliceDefaultPrimary,
       QuoteSliceVariation,
       QuoteSliceDefault,
       TextSlice,
+      TextSliceDefaultPrimary,
       TextSliceVariation,
       TextSliceDefault,
     };

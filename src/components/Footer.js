@@ -39,7 +39,7 @@ function SignUpForm({ settings }) {
               <input
                 name="email"
                 type="email"
-                placeholder="jane.doe@example.com"
+                placeholder="consultoria@audiopoa.com"
                 required={true}
                 className="w-full rounded-none border-b border-slate-200 py-3 pl-3 pr-10 text-slate-800 placeholder-slate-400"
               />
@@ -70,9 +70,9 @@ export function Footer({ withSignUpForm = true, settings }) {
         <HorizontalDivider />
         {withSignUpForm && <SignUpForm settings={settings} />}
         <div className="mx-auto w-full max-w-3xl text-center text-xs font-semibold tracking-tight text-slate-500">
-          Proudly published using{" "}
-          <Link href="https://prismic.io" className="text-slate-700">
-            Prismic
+          Publicado po{" "}
+          <Link href="https://fdsm.vercel.app" className="text-slate-700">
+            FDSM - Developer
           </Link>
         </div>
       </div>
