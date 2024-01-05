@@ -48,15 +48,15 @@ interface ArticleDocumentData {
   featuredImage: prismic.ImageField<never>;
 
   /**
-   * cta_button field in *Article*
+   * button_cta field in *Article*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: article.cta_button
+   * - **API ID Path**: article.button_cta
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  cta_button: prismic.LinkField;
+  button_cta: prismic.LinkField;
 
   /**
    * Slice Zone field in *Article*
@@ -344,6 +344,21 @@ export type AllDocumentTypes =
   | SettingsDocument;
 
 /**
+ * Primary content in *ContactForm → Primary*
+ */
+export interface ContactFormSliceDefaultPrimary {
+  /**
+   * button_cta field in *ContactForm → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_form.primary.button_cta
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_cta: prismic.KeyTextField;
+}
+
+/**
  * Default variation for ContactForm Slice
  *
  * - **API ID**: `default`
@@ -352,7 +367,7 @@ export type AllDocumentTypes =
  */
 export type ContactFormSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<ContactFormSliceDefaultPrimary>,
   never
 >;
 
@@ -580,6 +595,7 @@ declare module "@prismicio/client" {
       SettingsDocumentData,
       AllDocumentTypes,
       ContactFormSlice,
+      ContactFormSliceDefaultPrimary,
       ContactFormSliceVariation,
       ContactFormSliceDefault,
       ImageSlice,

@@ -40,10 +40,10 @@
           "thumbnails": []
         }
       },
-      "cta_button": {
+      "button_cta": {
         "type": "Link",
         "config": {
-          "label": "cta_button",
+          "label": "button_cta",
           "placeholder": "",
           "select": null
         }

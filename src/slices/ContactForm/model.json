@@ -10,7 +10,15 @@
       "docURL": "...",
       "version": "sktwi1xtmkfgx8626",
       "description": "ContactForm",
-      "primary": {},
+      "primary": {
+        "button_cta": {
+          "type": "Text",
+          "config": {
+            "label": "button_cta",
+            "placeholder": ""
+          }
+        }
+      },
       "items": {},
       "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
     }

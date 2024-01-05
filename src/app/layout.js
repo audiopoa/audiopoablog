@@ -23,7 +23,10 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       className={`${inter.className} ${libre_baskerville.className}`}
-    >
+    > 
+     <head>
+    <meta name="google-site-verification" content="2JDVOZDxUJn34Z4qyAzDGn99m2eKWO-abWlB67I1cpY" />
+    </head>
       <body className="overflow-x-hidden antialiased">
         <main>
           {children}
