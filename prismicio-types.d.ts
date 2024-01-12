@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type ArticleDocumentDataSlicesSlice =
+  | ButtonCtaSlice
   | ImageSlice
   | QuoteSlice
   | TextSlice
@@ -344,6 +345,51 @@ export type AllDocumentTypes =
   | SettingsDocument;
 
 /**
+ * Primary content in *ButtonCta → Primary*
+ */
+export interface ButtonCtaSliceDefaultPrimary {
+  /**
+   * button_cta field in *ButtonCta → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: button_cta.primary.button_cta
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_cta: prismic.LinkField;
+}
+
+/**
+ * ButtonCta variation for ButtonCta Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ButtonCtaSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ButtonCtaSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ButtonCta*
+ */
+type ButtonCtaSliceVariation = ButtonCtaSliceDefault;
+
+/**
+ * ButtonCta Shared Slice
+ *
+ * - **API ID**: `button_cta`
+ * - **Description**: ButtonCta
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ButtonCtaSlice = prismic.SharedSlice<
+  "button_cta",
+  ButtonCtaSliceVariation
+>;
+
+/**
  * Primary content in *ContactForm → Primary*
  */
 export interface ContactFormSliceDefaultPrimary {
@@ -594,6 +640,10 @@ declare module "@prismicio/client" {
       SettingsDocument,
       SettingsDocumentData,
       AllDocumentTypes,
+      ButtonCtaSlice,
+      ButtonCtaSliceDefaultPrimary,
+      ButtonCtaSliceVariation,
+      ButtonCtaSliceDefault,
       ContactFormSlice,
       ContactFormSliceDefaultPrimary,
       ContactFormSliceVariation,

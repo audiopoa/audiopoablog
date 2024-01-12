@@ -45,6 +45,7 @@
         "config": {
           "label": "button_cta",
           "placeholder": "",
+          "allowTargetBlank": true,
           "select": null
         }
       },
@@ -53,6 +54,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "button_cta": {
+              "type": "SharedSlice"
+            },
             "image": {
               "type": "SharedSlice"
             },
