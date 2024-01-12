@@ -40,15 +40,6 @@
           "thumbnails": []
         }
       },
-      "button_cta": {
-        "type": "Link",
-        "config": {
-          "label": "button_cta",
-          "placeholder": "",
-          "allowTargetBlank": true,
-          "select": null
-        }
-      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

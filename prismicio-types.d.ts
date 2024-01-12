@@ -49,17 +49,6 @@ interface ArticleDocumentData {
   featuredImage: prismic.ImageField<never>;
 
   /**
-   * button_cta field in *Article*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: article.button_cta
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  button_cta: prismic.LinkField;
-
-  /**
    * Slice Zone field in *Article*
    *
    * - **Field Type**: Slice Zone
