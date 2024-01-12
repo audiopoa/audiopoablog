@@ -349,6 +349,16 @@ export type AllDocumentTypes =
  */
 export interface ButtonCtaSliceDefaultPrimary {
   /**
+   * Button Label field in *ButtonCta → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: button_cta.primary.button_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_label: prismic.KeyTextField;
+
+  /**
    * button_cta field in *ButtonCta → Primary*
    *
    * - **Field Type**: Link

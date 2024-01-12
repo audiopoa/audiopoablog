@@ -7,8 +7,14 @@
 				"__TYPE__": "LinkContent",
 				"value": {
 					"__TYPE__": "ExternalLink",
-					"url": "http://google.com"
+					"url": "http://google.com",
+					"target": "_blank"
 				}
+			},
+			"button_label": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Comprar"
 			}
 		},
 		"items": []
