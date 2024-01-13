@@ -1,0 +1,14 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"testetexto": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "ola\n"
+			}
+		},
+		"items": []
+	}
+]

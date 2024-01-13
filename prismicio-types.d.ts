@@ -5,7 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type ArticleDocumentDataSlicesSlice =
-  | ButtonCtaSlice
+  | BotaoSlice
   | ImageSlice
   | QuoteSlice
   | TextSlice
@@ -47,6 +47,17 @@ interface ArticleDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   featuredImage: prismic.ImageField<never>;
+
+  /**
+   * testo field in *Article*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.testo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  testo: prismic.KeyTextField;
 
   /**
    * Slice Zone field in *Article*
@@ -334,59 +345,46 @@ export type AllDocumentTypes =
   | SettingsDocument;
 
 /**
- * Primary content in *ButtonCta → Primary*
+ * Primary content in *Botao → Primary*
  */
-export interface ButtonCtaSliceDefaultPrimary {
+export interface BotaoSliceDefaultPrimary {
   /**
-   * Button Label field in *ButtonCta → Primary*
+   * testetexto field in *Botao → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: button_cta.primary.button_label
+   * - **API ID Path**: botao.primary.testetexto
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  button_label: prismic.KeyTextField;
-
-  /**
-   * button_cta field in *ButtonCta → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: button_cta.primary.button_cta
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  button_cta: prismic.LinkField;
+  testetexto: prismic.KeyTextField;
 }
 
 /**
- * ButtonCta variation for ButtonCta Slice
+ * Default variation for Botao Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type ButtonCtaSliceDefault = prismic.SharedSliceVariation<
+export type BotaoSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Simplify<ButtonCtaSliceDefaultPrimary>,
+  Simplify<BotaoSliceDefaultPrimary>,
   never
 >;
 
 /**
- * Slice variation for *ButtonCta*
+ * Slice variation for *Botao*
  */
-type ButtonCtaSliceVariation = ButtonCtaSliceDefault;
+type BotaoSliceVariation = BotaoSliceDefault;
 
 /**
- * ButtonCta Shared Slice
+ * Botao Shared Slice
  *
- * - **API ID**: `button_cta`
- * - **Description**: ButtonCta
+ * - **API ID**: `botao`
+ * - **Description**: Botao
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type ButtonCtaSlice = prismic.SharedSlice<
-  "button_cta",
-  ButtonCtaSliceVariation
->;
+export type BotaoSlice = prismic.SharedSlice<"botao", BotaoSliceVariation>;
 
 /**
  * Primary content in *ContactForm → Primary*
@@ -604,9 +602,47 @@ export type TextSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Text → Primary*
+ */
+export interface TextSliceCtaPrimary {
+  /**
+   * Text field in *Text → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Text with rich formatting
+   * - **API ID Path**: text.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+
+  /**
+   * CTA link field in *Text → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text.primary.cta_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  cta_link: prismic.LinkField;
+}
+
+/**
+ * CTA variation for Text Slice
+ *
+ * - **API ID**: `cta`
+ * - **Description**: Text
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextSliceCta = prismic.SharedSliceVariation<
+  "cta",
+  Simplify<TextSliceCtaPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *Text*
  */
-type TextSliceVariation = TextSliceDefault;
+type TextSliceVariation = TextSliceDefault | TextSliceCta;
 
 /**
  * Text Shared Slice
@@ -639,10 +675,10 @@ declare module "@prismicio/client" {
       SettingsDocument,
       SettingsDocumentData,
       AllDocumentTypes,
-      ButtonCtaSlice,
-      ButtonCtaSliceDefaultPrimary,
-      ButtonCtaSliceVariation,
-      ButtonCtaSliceDefault,
+      BotaoSlice,
+      BotaoSliceDefaultPrimary,
+      BotaoSliceVariation,
+      BotaoSliceDefault,
       ContactFormSlice,
       ContactFormSliceDefaultPrimary,
       ContactFormSliceVariation,
@@ -659,8 +695,10 @@ declare module "@prismicio/client" {
       QuoteSliceDefault,
       TextSlice,
       TextSliceDefaultPrimary,
+      TextSliceCtaPrimary,
       TextSliceVariation,
       TextSliceDefault,
+      TextSliceCta,
     };
   }
 }

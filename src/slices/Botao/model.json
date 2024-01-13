@@ -1,0 +1,26 @@
+{
+  "id": "botao",
+  "type": "SharedSlice",
+  "name": "Botao",
+  "description": "Botao",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "testetexto": {
+          "type": "Text",
+          "config": {
+            "label": "testetexto",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

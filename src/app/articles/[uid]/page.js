@@ -104,6 +104,11 @@ export default async function Page({ params }) {
       {latestArticles.length > 0 && (
         <Bounded>
           <div className="grid grid-cols-1 justify-items-center gap-16 md:gap-24">
+          <Link className="bg-orange-300 text-white font-bold py-2 px-4 rounded"
+          href="https://wa.me/5551999446108?text=Ol%C3%A1.+Encontrei+a+loja+no+blog.+Gostaria+de+visitar+o+showroom."
+          target="_blank"
+          >Visite nosso showroom hoje mesmo!
+          </Link>
             <HorizontalDivider />
             <div className="w-full">
               <Heading size="2xl" className="mb-10">

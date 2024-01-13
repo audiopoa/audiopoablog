@@ -40,12 +40,19 @@
           "thumbnails": []
         }
       },
+      "testo": {
+        "type": "Text",
+        "config": {
+          "label": "testo",
+          "placeholder": ""
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "button_cta": {
+            "botao": {
               "type": "SharedSlice"
             },
             "image": {
