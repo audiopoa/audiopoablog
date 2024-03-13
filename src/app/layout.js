@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 
+
 import { Inter, Libre_Baskerville } from "next/font/google";
 
 import { PrismicPreview } from "@prismicio/next";
@@ -18,15 +19,24 @@ const libre_baskerville = Libre_Baskerville({
   display: "swap",
 });
 
+// either Static metadata
+export const metadata = {
+  verification: {
+    google: "2JDVOZDxUJn34Z4qyAzDGn99m2eKWO-abWlB67I1cpY",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  }
+
+}
+
 export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
       className={`${inter.className} ${libre_baskerville.className}`}
     > 
-     <head>
-    <meta name="google-site-verification" content="2JDVOZDxUJn34Z4qyAzDGn99m2eKWO-abWlB67I1cpY" />
-    </head>
       <body className="overflow-x-hidden antialiased">
         <main>
           {children}

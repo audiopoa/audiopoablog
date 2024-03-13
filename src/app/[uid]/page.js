@@ -26,6 +26,13 @@ export async function generateMetadata({ params }) {
         },
       ],
     },
+    verification: {
+        google: "2JDVOZDxUJn34Z4qyAzDGn99m2eKWO-abWlB67I1cpY",
+      },
+      robots: {
+        index: true,
+        follow: true,
+      },
   };
 }
 

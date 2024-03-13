@@ -55,6 +55,18 @@ export async function generateMetadata({ params }) {
         },
       ],
     },
+    alternates: {
+      canonical: `https://audiopoablog.vercel.app/articles/${article.uid}`
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: article.data.meta_title,
+      description: article.data.meta_description,
+      siteId: '1467726470533754880',
+      creator: '@audiopoa',
+      creatorId: '1467726470533754880',
+      images: [`https://audiopoablog.vercel.app/articles/${article.uid}`], // Must be an absolute URL
+    },
   };
 }
 
